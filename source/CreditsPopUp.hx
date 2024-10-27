@@ -51,21 +51,21 @@ class CreditsPopUp extends FlxSpriteGroup
 		}
 		switch (PlayState.storyWeek)
 		{
-			case 6:
+                        case 1:
+                		headingPath = {path: 'songHeadings/stremblixHeading', antiAliasing: false, iconOffset: 0};
+                        case 2:
+                		headingPath = {path: 'songHeadings/hazetalHeading', antiAliasing: true, iconOffset: 0};
+                        case 3:
+                		headingPath = {path: 'songHeadings/zlixHeading', antiAliasing: false, iconOffset: 0};
+                        case 4:
+                		headingPath = {path: 'songHeadings/roblox2ajHeading', antiAliasing: true, iconOffset: 0};
+                        case 5:
+                		headingPath = {path: 'songHeadings/amguntHeading', antiAliasing: false, iconOffset: 0};
+                        case 6:
                 		bg = new FlxSprite().makeGraphic(400, 50, FlxColor.WHITE);
         	}
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-		  case 'black-spikes' | 'blue-stars' | 'contented' | 'breakpoint' | 'fully-breakfast' | 'stars' | 'goldy-breaker' | 'polynomial' | 'goofy-keyboard' | 'Iniustitiam' | 'codekill':
-			headingPath = {path: 'songHeadings/stremblixHeading', antiAliasing: false, iconOffset: 0};
-		  case 'burger-blast':
-			headingPath = {path: 'songHeadings/hazetalHeading', antiAliasing: true, iconOffset: 0};
-		  case 'deep-dish':
-			headingPath = {path: 'songHeadings/zlixHeading', antiAliasing: false, iconOffset: 0};
-		  case 'powerfull-wheelchair' | 'corned' | 'whoopsie' | 'get-ready':
-			headingPath = {path: 'songHeadings/roblox2ajHeading', antiAliasing: true, iconOffset: 0};
-		  case 'binomial':
-			headingPath = {path: 'songHeadings/amguntHeading', antiAliasing: false, iconOffset: 0};
 		}
 		if (headingPath != null)
 		{
