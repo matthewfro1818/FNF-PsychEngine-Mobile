@@ -75,6 +75,8 @@ class Note extends FlxSprite
 	public var isSustainNote:Bool = false;
 	public var noteType(default, set):String = null;
 
+	private var CharactersWith3D:Array<String> = ["3D_Dave", "expunged", 'unfair-expunged', 'dembo', 'bamblix', 'yambi', 'bamburg', 'crusti', 'bambi-minion', 'cakebi', 'nuggbi', 'fully-breakfast-pichi', 'running-pichi', 'code-pichi', 'code-pichiup', 'chocolabi', 'chocolabi-crazy', 'baggett', 'golden-bandu', 'golden-disruptor', 'golden-dave', 'pichai', 'krembi', 'krembi-window', 'emma', 'angry-emma', 'stremblix', 'stremBSOD', 'stremblix-trolled', 'alert', 'alert-trolled', 'alex', 'alex-trolled', 'seumadruga', 'seumadruga-trolled', 'sunday', 'sunday-trolled', 'calabazin', 'calabazin-trolled', 'nocallate', 'none', 'figumbi'];
+
 	public var eventName:String = '';
 	public var eventLength:Int = 0;
 	public var eventVal1:String = '';
@@ -190,6 +192,13 @@ class Note extends FlxSprite
 
 		if(noteData > -1 && noteType != value) {
 			switch(value) {
+		if ((((CharactersWith3D.contains(PlayState.SONG.player2) && !musthit) || ((CharactersWith3D.contains(PlayState.SONG.player1)
+		|| ((CharactersWith3D.contains(PlayState.SONG.player2) || CharactersWith3D.contains(PlayState.SONG.player1)) && ((this.strumTime / 50) % 20 > 10)))
+		&& this.noteType == default)
+		{
+			this.noteType = '3D';
+		        //reloadNote('notes/NOTE_assets_3D');
+		}
 				case 'Hurt Note':
 					ignoreNote = mustPress;
 					//reloadNote('HURTNOTE_assets');
